@@ -1,43 +1,26 @@
 package HadoopDemo.HelloHadoop;
 
-//import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
 
 import org.junit.Test;
-import static junit.framework.Assert.*;
+//import static junit.framework.Assert.*;
+import java.net.URI;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest extends TestCase {
-	/**
-	 * Create the test case
-	 *
-	 * @param testName name of the test case
-	 */
-	public AppTest(String testName) {
-		super(testName);
-	}
-
-	/**
-	 * @return the suite of tests being tested
-	 */
-//    public static Test suite()
-//    {
-//        return new TestSuite( AppTest.class );
-//    }
-
-	/**
-	 * Rigourous Test :-)
-	 */
-	public void testApp() {
-		assertTrue(true);
-	}
-
+public class AppTest {
 	@Test
-	public static void testDemo() {
-		App app = new App();
-		assertEquals("Hello", app.sayHello());
+	public void testDemo() {
+		System.out.println("Hello AppTest!");
+	}
+	
+	//@Test
+	public void testmkdir() throws Exception {
+		System.out.println("Hello testmkdir!");
+		
+		Configuration configuration = new Configuration();
+		FileSystem fs = FileSystem.get(new URI("hdfs://hadoop:9000"), configuration, "root");
+		fs.mkdirs(new Path("/test0"));
+		fs.close();
 	}
 }
