@@ -14,7 +14,6 @@ public class App {
 			app.createFile();
 		} catch (Exception e) {
 			System.out.println("Exception!!!");
-
 		}
 	}
 
@@ -24,8 +23,8 @@ public class App {
 		Configuration configuration = new Configuration();
 		FileSystem fs = FileSystem.get(new URI("hdfs://hadoop:9000"), configuration, "root");
 		FSDataOutputStream outputStream = null;
-		//outputStream = fs.create(new Path("/test/test01.txt"));
-		//outputStream.writeChars("123");
+		outputStream = fs.create(new Path("/test1/test01.txt"));
+		outputStream.writeChars("123\n");
 		outputStream.close();
 		fs.close();
 	}
