@@ -19,23 +19,23 @@ public class AppTest {
 	public void testRead() throws Exception {
 		System.out.println("Hello testRead!");
 		
-		Configuration configuration = new Configuration();
-		FileSystem fs = FileSystem.get(new URI("hdfs://hadoop:9000"), configuration, "root");
-		FSDataInputStream fis = fs.open(new Path("/test1/test01.txt"));
-		//IOUtils.copyBytes(fis, System.out, configuration);
-		fis.close();
-		fs.close();
+//		Configuration configuration = new Configuration();
+//		FileSystem fs = FileSystem.get(new URI("hdfs://hadoop:9000"), configuration, "root");
+//		FSDataInputStream fis = fs.open(new Path("/test1/test01.txt"));
+//		IOUtils.copyBytes(fis, System.out, configuration);
+//		fis.close();
+//		fs.close();
 	}
 	
 	@Test
 	public void testmkdir() throws Exception {
 		System.out.println("Hello testmkdir!");
 		
-		Configuration configuration = new Configuration();
-		FileSystem fs = FileSystem.get(new URI("hdfs://hadoop:9000"), configuration, "root");
-		//fs.mkdirs(new Path("/test1"));
-		//fs.delete(new Path("/test1/"), true);
-		fs.close();
+//		Configuration configuration = new Configuration();
+//		FileSystem fs = FileSystem.get(new URI("hdfs://hadoop:9000"), configuration, "root");
+//		fs.mkdirs(new Path("/test1"));
+//		fs.delete(new Path("/test1/"), true);
+//		fs.close();
 	}
 	
 	@After
