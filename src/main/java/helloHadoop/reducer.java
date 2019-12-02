@@ -1,4 +1,4 @@
-package HadoopDemo.HelloHadoop;
+package helloHadoop;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package helloHadoop;
+package flow;
 
 import java.io.IOException;
 
@@ -10,13 +10,13 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-public class driver {
+public class FlowDriver{
 	public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException{
 		Job job = Job.getInstance(new Configuration());
-		job.setJarByClass(driver.class);
+		job.setJarByClass(FlowDriver.class);
 		
-		job.setMapperClass(mapper.class);
-		job.setReducerClass(reducer.class);
+		job.setMapperClass(FlowMapper.class);
+		job.setReducerClass(FlowReducer.class);
 		
 		job.setMapOutputKeyClass(Text.class);
 		job.setMapOutputValueClass(IntWritable.class);
@@ -30,5 +30,4 @@ public class driver {
 		boolean b = job.waitForCompletion(true);
 		System.exit(b ? 0 : 1);
 	}
-
 }

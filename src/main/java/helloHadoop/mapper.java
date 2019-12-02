@@ -1,4 +1,4 @@
-package HadoopDemo.HelloHadoop;
+package helloHadoop;
 
 import java.io.IOException;
 
@@ -17,7 +17,6 @@ public class mapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 		String line = value.toString();
 		String[] words = line.split(" ");
 		for(String word : words) {
-			//context.write(new Text(word), new IntWritable(1));
 			this.word.set(word);
 			context.write(this.word, this.one);
 		}
