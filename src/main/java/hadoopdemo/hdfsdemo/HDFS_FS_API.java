@@ -51,6 +51,13 @@ public class HDFS_FS_API {
 			}
 		});
 		IOUtils.copyBytes(in3, out3, 1, true);
+		
+		OutputStream out4 = fs.create(new Path(uri));
+		try {
+			out4.write("hello world!".getBytes());
+		} finally {
+			out4.close();
+		}
 	}
 
 }
